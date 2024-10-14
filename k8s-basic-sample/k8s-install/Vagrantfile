@@ -1,4 +1,3 @@
-
 NodeCnt = 2
 
 Vagrant.configure("2") do |config|
@@ -68,7 +67,6 @@ systemctl stop firewalld && systemctl disable firewalld
 echo '======== [5] Swap 비활성화 ========'
 swapoff -a && sed -i '/ swap / s/^/#/' /etc/fstab
 
-
 echo '======== [6] 컨테이너 런타임 설치 ========'
 echo '======== [6-1] 컨테이너 런타임 설치 전 사전작업 ========'
 echo '======== [6-1] iptable 세팅 ========'
@@ -127,8 +125,6 @@ yum install -y kubelet-1.27.2-150500.1.1.x86_64 kubeadm-1.27.2-150500.1.1.x86_64
 systemctl enable --now kubelet
 
 SHELL
-
-
 
 $provision_master_node = <<-SHELL
 
